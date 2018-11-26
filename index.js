@@ -23,7 +23,13 @@ app.get('/ingredient-search', async (req, res, next) => {
       }
     )
     const data = await apiResult.json()
-    res.json(data)
+    const dataWithImageURLs = data.map(ingredient => {
+      ingredient.image = `https://spoonacular.com/cdn/ingredients_250x250/${
+        result.image
+      }`
+      return ingredient
+    })
+    res.json(dataWithImageURLs)
   } catch (error) {
     next(error)
   }
