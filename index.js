@@ -1,6 +1,7 @@
 const express = require('express')
 const fetch = require('node-fetch').default
 const app = express()
+require('dotenv').config()
 
 const port = process.env.PORT || 3000
 
