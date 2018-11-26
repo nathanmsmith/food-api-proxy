@@ -5,6 +5,8 @@ require('dotenv').config()
 
 const port = process.env.PORT || 3000
 
+app.use(cors())
+
 app.get('/ingredient-search', async (req, res, next) => {
   try {
     const ingredient = req.query.q
