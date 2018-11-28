@@ -35,7 +35,7 @@ app.get('/ingredient-search', async (req, res, next) => {
   }
 })
 
-app.get('/recipe-search', async (req, res, next) => {
+app.get('/recipe-search-by-ingredients', async (req, res, next) => {
   try {
     const ingredients = req.query.q
     const apiResult = await fetch(
