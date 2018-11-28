@@ -81,10 +81,26 @@ app.get('/get-recipe-info', async (req, res, next) => {
         },
       }
     )
+    const apiInfoResult = await fetch(
+      `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/${id}/information`,
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Mashape-Key': process.env.FOOD_API_KEY,
+          'X-Mashape-Host':
+            'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
+        },
+      }
+    )
     const instructionsData = await apiInstructionsResult.json()
     const summaryData = await apiSummaryResult.json()
+    const infoData = await apiInfoResult.json()
 
-    const data = { ...summaryData, instructions: instructionsData }
+    const data = {
+      ...summaryData,
+      instructions: instructionsData,
+      image: infoData.image,
+    }
     res.json(data)
   } catch (error) {
     next(error)
