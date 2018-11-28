@@ -35,11 +35,11 @@ app.get('/ingredient-search', async (req, res, next) => {
   }
 })
 
-app.get('/ingredient-search', async (req, res, next) => {
+app.get('/recipe-search', async (req, res, next) => {
   try {
-    const ingredient = req.query.q
+    const ingredients = req.query.q
     const apiResult = await fetch(
-      `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/ingredients/autocomplete?query=${ingredient}&number=10`,
+      `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=10&ranking=2&ingredients=${ingredients}`,
       {
         headers: {
           'Content-Type': 'application/json',
@@ -50,13 +50,8 @@ app.get('/ingredient-search', async (req, res, next) => {
       }
     )
     const data = await apiResult.json()
-    const dataWithImageURLs = data.map(ingredient => {
-      ingredient.image = `https://spoonacular.com/cdn/ingredients_250x250/${
-        ingredient.image
-      }`
-      return ingredient
-    })
-    res.json(dataWithImageURLs)
+    console.log(data)
+    res.json(data)
   } catch (error) {
     next(error)
   }
