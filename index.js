@@ -60,7 +60,7 @@ app.get('/get-recipe-info', async (req, res, next) => {
   try {
     const id = req.query.q
     const apiInstructionsResult = await fetch(
-      `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/${id}/analyzedInstructions?stepBreakdown=true`,
+      `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/${id}/analyzedInstructions`,
       {
         headers: {
           'Content-Type': 'application/json',
