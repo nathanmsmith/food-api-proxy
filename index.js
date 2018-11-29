@@ -100,6 +100,12 @@ app.get('/get-recipe-info', async (req, res, next) => {
       ...summaryData,
       instructions: instructionsData,
       image: infoData.image,
+      prepTime: infoData.readyInMinutes,
+      servings: infoData.servings,
+      cheap: infoData.cheap,
+      popular: infoData.popular,
+      vegetarian: infoData.vegetarian,
+      vegan: infoData.vegan,
     }
     res.json(data)
   } catch (error) {
