@@ -99,6 +99,7 @@ app.get('/get-recipe-info', async (req, res, next) => {
     const data = {
       ...summaryData,
       instructions: instructionsData,
+      ingredients: infoData.extendedIngredients.map(e => e.name),
       image: infoData.image,
       prepTime: infoData.readyInMinutes,
       servings: infoData.servings,
