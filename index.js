@@ -12,7 +12,7 @@ app.get('/ingredient-search', async (req, res, next) => {
   try {
     const ingredient = req.query.q
     const apiResult = await fetch(
-      `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/ingredients/autocomplete?query=${ingredient}&metainformation=true&number=10`,
+      `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/ingredients/autocomplete?query=${ingredient}&metaInformation=true&number=10`,
       {
         headers: {
           'Content-Type': 'application/json',

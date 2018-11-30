@@ -80,4 +80,7 @@ typings/
 # FuseBox cache
 .fusebox/
 
+# local environment
+d41d8cd9.env
+
 # End of https://www.gitignore.io/api/node
