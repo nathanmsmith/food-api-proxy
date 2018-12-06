@@ -17,8 +17,6 @@ app.get('/ingredient-search', async (req, res, next) => {
         headers: {
           'Content-Type': 'application/json',
           'X-Mashape-Key': process.env.FOOD_API_KEY,
-          'X-Mashape-Host':
-            'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
         },
       }
     )
@@ -44,8 +42,6 @@ app.get('/recipe-search-by-ingredients', async (req, res, next) => {
         headers: {
           'Content-Type': 'application/json',
           'X-Mashape-Key': process.env.FOOD_API_KEY,
-          'X-Mashape-Host':
-            'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
         },
       }
     )
@@ -65,8 +61,6 @@ app.get('/get-recipe-info', async (req, res, next) => {
         headers: {
           'Content-Type': 'application/json',
           'X-Mashape-Key': process.env.FOOD_API_KEY,
-          'X-Mashape-Host':
-            'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
         },
       }
     )
@@ -76,8 +70,6 @@ app.get('/get-recipe-info', async (req, res, next) => {
         headers: {
           'Content-Type': 'application/json',
           'X-Mashape-Key': process.env.FOOD_API_KEY,
-          'X-Mashape-Host':
-            'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
         },
       }
     )
@@ -87,8 +79,6 @@ app.get('/get-recipe-info', async (req, res, next) => {
         headers: {
           'Content-Type': 'application/json',
           'X-Mashape-Key': process.env.FOOD_API_KEY,
-          'X-Mashape-Host':
-            'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
         },
       }
     )
